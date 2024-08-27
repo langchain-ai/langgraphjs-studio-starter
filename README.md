@@ -13,8 +13,9 @@ This demo requires an [OpenAI API key](https://openai.com/) and a [Tavily API ke
 0. Clone this repository.
 1. Rename the existing `.env.example` file `.env` and fill in your `OPENAI_API_KEY` and `TAVILY_API_KEY`.
 2. Download the latest release of LangGraph Studio [from here](https://github.com/langchain-ai/langgraph-studio/releases).
-3. Open the enclosing folder in LangGraph Studio.
-4. Start testing your app!
+3. Log in/sign up for [LangSmith](https://smith.langchain.com/) if you haven't already.
+4. Open the enclosing folder in LangGraph Studio.
+5. Start testing your app!
 
 The graph has access to a web search tool powered by Tavily - you can try asking it about current events like `"What is the current conservation status of the Great Barrier Reef?"` and see it use the tool.
 
@@ -22,9 +23,11 @@ Note that the `Deploy` button is currently not supported, but will be soon!
 
 ## Development
 
-While iterating on your graph, you can edit past state and rerun your app from past states to debug specific nodes. Local changes will be automatically applied via hot reload. Try adding an interrupt before the agent calls tools, updating the prompt to take on a persona, or adding additional nodes and edges!
+While iterating on your graph, you can edit past state and rerun your app from past states to debug specific nodes. Local changes will be automatically applied via hot reload. Try adding an interrupt before the agent calls tools, updating the default system message in `src/utils/state.ts` to take on a persona, or adding additional nodes and edges!
 
 Follow up requests will be appended to the same thread. You can create an entirely new thread, clearing previous history, using the `+` button in the top right.
+
+You can find the latest docs on [LangGraph.js](https://langchain-ai.github.io/langgraphjs/) here.
 
 LangGraph Studio also integrates with [LangSmith](https://smith.langchain.com/) for more in-depth tracing and collaboration with teammates.
 
