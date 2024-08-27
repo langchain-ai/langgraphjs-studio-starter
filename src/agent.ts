@@ -1,55 +1,29 @@
 import { AIMessage } from "@langchain/core/messages";
-import { ChatPromptTemplate } from "@langchain/core/prompts";
+import { TavilySearchResults } from "@langchain/community/tools/tavily_search";
 import { ChatOpenAI } from "@langchain/openai";
-import { tool } from "@langchain/core/tools";
 
 import { StateGraph } from "@langchain/langgraph";
 import { ToolNode } from "@langchain/langgraph/prebuilt";
 
-import { z } from "zod";
-
 import { StateAnnotation } from "./utils/state.js";
 
 const tools = [
-  tool(async ({ query }) => {
-    const url = "https://en.wikipedia.org/w/api.php";
-    const params = new URLSearchParams({
-      action: "query",
-      list: "search",
-      srsearch: query,
-      format: "json",
-    });
-    const response = await fetch(`${url}?${params}`);
-    return await response.json();
-  }, {
-    name: "search_wikipedia",
-    description: "Search Wikipedia for the given query and return the JSON response.",
-    schema: z.object({
-      query: z.string().describe("The search query to send to Wikipedia"),
-    }),
-  }),
+  new TavilySearchResults({ maxResults: 3, }),
 ];
 
 // Define the function that calls the model
 async function callModel(
   state: typeof StateAnnotation.State,
 ) {
-  /** 
+  /**
    * Call the LLM powering our agent.
    * Feel free to customize the prompt, model, and other logic!
    */
-  const prompt = ChatPromptTemplate.fromMessages([
-    ["system", "You are a helpful assistant."],
-    ["placeholder", "{messages}"],
-  ]);
-
   const model = new ChatOpenAI({
     model: "gpt-4o",
   }).bindTools(tools);
 
-  const response = await prompt
-    .pipe(model)
-    .invoke({ messages: state.messages });
+  const response = await model.invoke(state.messages);
 
   // We return a list, because this will get added to the existing list
   return { messages: [response] };

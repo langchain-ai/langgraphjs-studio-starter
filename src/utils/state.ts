@@ -1,4 +1,4 @@
-import type { BaseMessage } from "@langchain/core/messages";
+import { SystemMessage, type BaseMessage } from "@langchain/core/messages";
 import { Annotation, messagesStateReducer } from "@langchain/langgraph";
 
 // This is the primary state of your agent, where you can store any information
@@ -33,7 +33,11 @@ export const StateAnnotation = Annotation.Root({
    */
   messages: Annotation<BaseMessage[]>({
     reducer: messagesStateReducer,
-    default: () => [],
+    default: () => [
+      new SystemMessage(
+        `You are a helpful assistant. The current date is ${new Date().getTime()}.`
+      ),
+    ],
   }),
 
   // Feel free to add additional attributes to your state as needed.

@@ -8,13 +8,17 @@ It contains a simple example graph exported from `src/agent.ts` that implements 
 
 ## Getting Started
 
+This demo requires an [OpenAI API key](https://openai.com/) and a [Tavily API key](https://tavily.com/) for search results.
+
 0. Clone this repository.
-1. Rename the existing `.env.example` file `.env` and fill in your `OPENAI_API_KEY`.
+1. Rename the existing `.env.example` file `.env` and fill in your `OPENAI_API_KEY` and `TAVILY_API_KEY`.
 2. Download the latest release of LangGraph Studio [from here](https://github.com/langchain-ai/langgraph-studio/releases).
 3. Open the enclosing folder in LangGraph Studio.
 4. Start testing your app!
 
-The graph has access to a basic Wikipedia tool which does not require additional authentication - you can try asking it about current events like `"What is the current conservation status of the Great Barrier Reef?"` and see it use the tool.
+The graph has access to a web search tool powered by Tavily - you can try asking it about current events like `"What is the current conservation status of the Great Barrier Reef?"` and see it use the tool.
+
+Note that the `Deploy` button is currently not supported, but will be soon!
 
 ## Development
 
