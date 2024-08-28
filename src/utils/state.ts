@@ -33,11 +33,7 @@ export const StateAnnotation = Annotation.Root({
    */
   messages: Annotation<BaseMessage[]>({
     reducer: messagesStateReducer,
-    default: () => [
-      new SystemMessage(
-        `You are a helpful assistant. The current date is ${new Date().getTime()}.`
-      ),
-    ],
+    default: () => [],
   }),
 
   // Feel free to add additional attributes to your state as needed.

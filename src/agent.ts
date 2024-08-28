@@ -1,4 +1,4 @@
-import { AIMessage } from "@langchain/core/messages";
+import { AIMessage, SystemMessage } from "@langchain/core/messages";
 import { TavilySearchResults } from "@langchain/community/tools/tavily_search";
 import { ChatOpenAI } from "@langchain/openai";
 
@@ -23,7 +23,14 @@ async function callModel(
     model: "gpt-4o",
   }).bindTools(tools);
 
-  const response = await model.invoke(state.messages);
+  const systemMessage = new SystemMessage(
+    `You are a helpful assistant. The current date is ${new Date().getTime()}.`
+  );
+
+  const response = await model.invoke([
+    systemMessage,
+    ...state.messages
+  ]);
 
   // We return a list, because this will get added to the existing list
   return { messages: [response] };
