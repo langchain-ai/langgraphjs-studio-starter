@@ -1,4 +1,4 @@
-import { SystemMessage, type BaseMessage } from "@langchain/core/messages";
+import { type BaseMessage } from "@langchain/core/messages";
 import { Annotation, messagesStateReducer } from "@langchain/langgraph";
 
 // This is the primary state of your agent, where you can store any information
