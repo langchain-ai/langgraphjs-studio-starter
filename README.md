@@ -27,6 +27,8 @@ You can also [click here](https://www.loom.com/share/81cafa32d57f4933bd5d9b08c70
 
 ## Development
 
+You must export your graph, or a function that returns a created graph, from a specified file. See [this page for more information](https://langchain-ai.github.io/langgraph/cloud/reference/cli/#configuration-file).
+
 While iterating on your graph, you can edit past state and rerun your app from past states to debug specific nodes. Local changes will be automatically applied via hot reload. Try adding an interrupt before the agent calls tools, updating the default system message in `src/utils/state.ts` to take on a persona, or adding additional nodes and edges!
 
 Follow up requests will be appended to the same thread. You can create an entirely new thread, clearing previous history, using the `+` button in the top right.

@@ -70,5 +70,6 @@ const workflow = new StateGraph(StateAnnotation)
 // Finally, we compile it!
 // This compiles it into a graph you can invoke and deploy.
 export const graph = workflow.compile({
-  interruptBefore: [], // if you want to update the state before calling the tools
+  // if you want to update the state before calling the tools
+  // interruptBefore: [],
 });
