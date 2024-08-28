@@ -35,6 +35,29 @@ Follow up requests will be appended to the same thread. You can create an entire
 
 You can find the latest (under construction) docs on [LangGraph.js](https://langchain-ai.github.io/langgraphjs/) here, including examples and other references.
 
+## Notes
+
+Currently in order for Studio to draw conditional edges properly, you will need to add a third parameter that manually lists the possible nodes the edge can route between. Here's an example:
+
+```ts
+.addConditionalEdges(
+  // First, we define the edges' source node. We use `callModel`.
+  // This means these are the edges taken after the `callModel` node is called.
+  "callModel",
+  // Next, we pass in the function that will determine the sink node(s), which
+  // will be called after the source node is called.
+  routeModelOutput,
+  // Mapping of the possible destinations the conditional edge can route to.
+  // Required for conditional edges to properly render the graph in Studio
+  {
+    tools: "tools",
+    __end__: "__end__",
+  }
+)
+```
+
+We are working to lift this requirement in the future.
+
 LangGraph Studio also integrates with [LangSmith](https://smith.langchain.com/) for more in-depth tracing and collaboration with teammates.
 
 You can swap in other models if you'd like by using [the appropriate LangChain.js integration package](https://js.langchain.com/v0.2/docs/integrations/chat/) or the appropriate SDK directly.
