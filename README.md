@@ -21,6 +21,8 @@ The graph has access to a web search tool powered by Tavily - you can try asking
 
 Note that the `Deploy` button is currently not supported, but will be soon!
 
+You will also need the latest versions of `@langchain/langgraph` and `@langchain/core`. See these instructions for help upgrading an [existing project](https://langchain-ai.github.io/langgraphjs/how-tos/manage-ecosystem-dependencies/).
+
 ## Development
 
 While iterating on your graph, you can edit past state and rerun your app from past states to debug specific nodes. Local changes will be automatically applied via hot reload. Try adding an interrupt before the agent calls tools, updating the default system message in `src/utils/state.ts` to take on a persona, or adding additional nodes and edges!
