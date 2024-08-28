@@ -47,12 +47,12 @@ Currently in order for Studio to draw conditional edges properly, you will need 
   // Next, we pass in the function that will determine the sink node(s), which
   // will be called after the source node is called.
   routeModelOutput,
-  // Mapping of the possible destinations the conditional edge can route to.
+  // List of the possible destinations the conditional edge can route to.
   // Required for conditional edges to properly render the graph in Studio
-  {
-    tools: "tools",
-    __end__: "__end__",
-  }
+  [
+    "tools",
+    "__end__"
+  ],
 )
 ```
 
