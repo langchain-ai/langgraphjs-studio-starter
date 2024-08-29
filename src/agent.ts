@@ -30,7 +30,7 @@ async function callModel(
   ]);
 
   // MessagesAnnotation supports returning a single message or array of messages
-  return { messages: response };
+  return { messages: [response] };
 }
 
 // Define the function that determines whether to continue or not

@@ -57,10 +57,10 @@
   dependencies:
     uuid "^10.0.0"
 
-"@langchain/langgraph@^0.1.9":
-  version "0.1.9"
-  resolved "https://registry.yarnpkg.com/@langchain/langgraph/-/langgraph-0.1.9.tgz#1bbcdb471f7f1440e16072c2770dc76208b2eba0"
-  integrity sha512-43z8rBHR6sBma8kpss4PVtLTI0zGVMfhmGbJIyUXyPgBGVRgPIWnF/LXcheaH81eym65Cg3WD8+UHn2ic6igxg==
+"@langchain/langgraph@^0.1.10-rc.3":
+  version "0.1.10-rc.3"
+  resolved "https://registry.yarnpkg.com/@langchain/langgraph/-/langgraph-0.1.10-rc.3.tgz#f6b40b22fda15666b0d170f1435acc04ef2b0155"
+  integrity sha512-Zvc0I4Pk8PJIuBoQsVOd4c+RS3vZFeTJpltTZAWtYckSGj7vSiag3RwX+BLBWqrCN1LjD1x/UfzzvYksXub92Q==
   dependencies:
     "@langchain/core" ">=0.2.31 <0.3.0"
     "@langchain/langgraph-checkpoint" "~0.0.4"
