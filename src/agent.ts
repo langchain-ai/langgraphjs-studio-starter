@@ -29,8 +29,8 @@ async function callModel(
     ...state.messages
   ]);
 
-  // We return a list, because this will get added to the existing list
-  return { messages: [response] };
+  // MessagesAnnotation supports returning a single message or array of messages
+  return { messages: response };
 }
 
 // Define the function that determines whether to continue or not

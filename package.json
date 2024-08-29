@@ -4,7 +4,7 @@
   "dependencies": {
     "@langchain/community": "^0.2.31",
     "@langchain/core": "^0.2.31",
-    "@langchain/langgraph": "^0.1.8",
+    "@langchain/langgraph": "^0.1.9",
     "@langchain/openai": "^0.2.8"
   }
 }
