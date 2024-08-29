@@ -35,6 +35,26 @@ Follow up requests will be appended to the same thread. You can create an entire
 
 You can find the latest (under construction) docs on [LangGraph.js](https://langchain-ai.github.io/langgraphjs/) here, including examples and other references.
 
+### Defining state
+
+The sample graph's state uses a prebuilt annotation called `MessagesAnnotation` to declare its state define how it handles return values from nodes. This annotation defines a state that is an object with a single key called `messages`. When a node in your graph returns messages, these returned messages are accumulated under the `messages` key in the state.
+
+A sample pattern might look like this:
+
+1. HumanMessage - initial user input
+2. AIMessage with .tool_calls - agent picking tool(s) to use to collect information
+3. ToolMessage(s) - the responses (or errors) from the executed tools
+    (... repeat steps 2 and 3 as needed ...)
+4. AIMessage without .tool_calls - agent responding in unstructured format to the user.
+5. HumanMessage - user responds with the next conversational turn.
+    (... repeat steps 2-5 as needed ... )
+
+The graph's state will merge lists of messages or returned single messages, updating existing messages by ID.
+
+By default, this ensures the state is "append-only", unless the new message has the same ID as an existing message.
+
+For further reading, see [this page](https://langchain-ai.github.io/langgraphjs/how-tos/define-state/#getting-started).
+
 ## Notes
 
 Currently in order for Studio to draw conditional edges properly, you will need to add a third parameter that manually lists the possible nodes the edge can route between. Here's an example:

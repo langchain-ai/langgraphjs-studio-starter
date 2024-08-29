@@ -1,11 +1,9 @@
-import { AIMessage, SystemMessage } from "@langchain/core/messages";
+import type { AIMessage } from "@langchain/core/messages";
 import { TavilySearchResults } from "@langchain/community/tools/tavily_search";
 import { ChatOpenAI } from "@langchain/openai";
 
-import { StateGraph } from "@langchain/langgraph";
+import { MessagesAnnotation, StateGraph } from "@langchain/langgraph";
 import { ToolNode } from "@langchain/langgraph/prebuilt";
-
-import { StateAnnotation } from "./utils/state.js";
 
 const tools = [
   new TavilySearchResults({ maxResults: 3, }),
@@ -13,7 +11,7 @@ const tools = [
 
 // Define the function that calls the model
 async function callModel(
-  state: typeof StateAnnotation.State,
+  state: typeof MessagesAnnotation.State,
 ) {
   /**
    * Call the LLM powering our agent.
@@ -23,12 +21,11 @@ async function callModel(
     model: "gpt-4o",
   }).bindTools(tools);
 
-  const systemMessage = new SystemMessage(
-    `You are a helpful assistant. The current date is ${new Date().getTime()}.`
-  );
-
   const response = await model.invoke([
-    systemMessage,
+    {
+      role: "system",
+      content: `You are a helpful assistant. The current date is ${new Date().getTime()}.`
+    },
     ...state.messages
   ]);
 
@@ -37,7 +34,7 @@ async function callModel(
 }
 
 // Define the function that determines whether to continue or not
-function routeModelOutput(state: typeof StateAnnotation.State) {
+function routeModelOutput(state: typeof MessagesAnnotation.State) {
   const messages = state.messages;
   const lastMessage: AIMessage = messages[messages.length - 1];
   // If the LLM is invoking tools, route there.
@@ -48,11 +45,13 @@ function routeModelOutput(state: typeof StateAnnotation.State) {
   return "__end__";
 }
 
-// Define a new graph
-const workflow = new StateGraph(StateAnnotation)
+// Define a new graph.
+// See https://langchain-ai.github.io/langgraphjs/how-tos/define-state/#getting-started for
+// more on defining custom graph states.
+const workflow = new StateGraph(MessagesAnnotation)
   // Define the two nodes we will cycle between
   .addNode("callModel", callModel)
-  .addNode("tools", new ToolNode<typeof StateAnnotation.State>(tools))
+  .addNode("tools", new ToolNode(tools))
   // Set the entrypoint as `callModel`
   // This means that this node is the first one called
   .addEdge("__start__", "callModel")

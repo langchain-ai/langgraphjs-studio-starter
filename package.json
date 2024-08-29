@@ -3,8 +3,8 @@
   "packageManager": "yarn@1.22.22",
   "dependencies": {
     "@langchain/community": "^0.2.31",
-    "@langchain/core": "^0.2.30",
-    "@langchain/langgraph": "^0.1.7",
+    "@langchain/core": "^0.2.31",
+    "@langchain/langgraph": "^0.1.8",
     "@langchain/openai": "^0.2.8"
   }
 }

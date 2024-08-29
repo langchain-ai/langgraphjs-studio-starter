@@ -19,10 +19,10 @@
     zod "^3.22.3"
     zod-to-json-schema "^3.22.5"
 
-"@langchain/core@>0.2.0 <0.3.0", "@langchain/core@>=0.2.20 <0.3.0", "@langchain/core@>=0.2.21 <0.3.0", "@langchain/core@>=0.2.26 <0.3.0", "@langchain/core@^0.2.30":
-  version "0.2.30"
-  resolved "https://registry.yarnpkg.com/@langchain/core/-/core-0.2.30.tgz#ed5bab992831e8685c495c43162e2acb8d7c352f"
-  integrity sha512-jeLmLTxnEq9zSq0J/fMlBCMT5Ix8tbZriqNYTm3oS7CPM2uHBcRQhV3fpsh4G8FnE7Pxa4sWfrFzc2jykhlk7A==
+"@langchain/core@0.2.31", "@langchain/core@>0.2.0 <0.3.0", "@langchain/core@>=0.2.21 <0.3.0", "@langchain/core@>=0.2.26 <0.3.0", "@langchain/core@>=0.2.31 <0.3.0", "@langchain/core@^0.2.31":
+  version "0.2.31"
+  resolved "https://registry.yarnpkg.com/@langchain/core/-/core-0.2.31.tgz#31e717fb511ed57b65095aba8b2b3845cff92588"
+  integrity sha512-qGfeaACST7dvovgHItzuag9fEBGK7IjCE9vRuTu/y8/WYGJi28WPD/AwWxnu7YdW1vZSuIXO6ZA76t2G9B/oKg==
   dependencies:
     ansi-styles "^5.0.0"
     camelcase "6"
@@ -57,12 +57,12 @@
   dependencies:
     uuid "^10.0.0"
 
-"@langchain/langgraph@^0.1.7":
-  version "0.1.7"
-  resolved "https://registry.yarnpkg.com/@langchain/langgraph/-/langgraph-0.1.7.tgz#588c9e9b4fcbbb8c6ce657d748c85a872ea30ef7"
-  integrity sha512-7AF/HZhWuiA2Fz3+f2GfzWDraOVTQH1dNRcr6hE5lWXRyBTZ//Y3wfNWLnBe/j7/4IVoVS5HUX9CP/vCdxtrCQ==
+"@langchain/langgraph@^0.1.8":
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/@langchain/langgraph/-/langgraph-0.1.8.tgz#1a3bd8a398c8cdebe0a7a74102603cd026b6da8a"
+  integrity sha512-hGXkU4vPvgmrrSlyoqZbInjVDn3ytXHOa93qk/Uox16RvO+xD+lwvhwTvLQ/HYKuoSjcYlH3DnrCz9kMTgJVww==
   dependencies:
-    "@langchain/core" ">=0.2.20 <0.3.0"
+    "@langchain/core" ">=0.2.31 <0.3.0"
     "@langchain/langgraph-checkpoint" "~0.0.4"
     "@langchain/langgraph-checkpoint-sqlite" "~0.0.1"
     double-ended-queue "^2.1.0-0"
