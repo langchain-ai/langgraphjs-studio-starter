@@ -5,28 +5,24 @@ import { ChatOpenAI } from "@langchain/openai";
 import { MessagesAnnotation, StateGraph } from "@langchain/langgraph";
 import { ToolNode } from "@langchain/langgraph/prebuilt";
 
-const tools = [
-  new TavilySearchResults({ maxResults: 3, }),
-];
+const tools = [new TavilySearchResults({ maxResults: 3 })];
 
 // Define the function that calls the model
-async function callModel(
-  state: typeof MessagesAnnotation.State,
-) {
+async function callModel(state: typeof MessagesAnnotation.State) {
   /**
    * Call the LLM powering our agent.
    * Feel free to customize the prompt, model, and other logic!
    */
   const model = new ChatOpenAI({
-    model: "gpt-4o",
+    model: "gpt-4o-mini",
   }).bindTools(tools);
 
   const response = await model.invoke([
     {
       role: "system",
-      content: `You are a helpful assistant. The current date is ${new Date().getTime()}.`
+      content: `You are a helpful assistant. The current date is ${new Date().getTime()}.`,
     },
-    ...state.messages
+    ...state.messages,
   ]);
 
   // MessagesAnnotation supports returning a single message or array of messages
@@ -64,10 +60,7 @@ const workflow = new StateGraph(MessagesAnnotation)
     routeModelOutput,
     // List of the possible destinations the conditional edge can route to.
     // Required for conditional edges to properly render the graph in Studio
-    [
-      "tools",
-      "__end__"
-    ],
+    ["tools", "__end__"]
   )
   // This means that after `tools` is called, `callModel` node is called next.
   .addEdge("tools", "callModel");
