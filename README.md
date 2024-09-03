@@ -1,10 +1,10 @@
 # LangGraph Studio TypeScript Starter (Beta)
 
-This is a sample project to help you get started with developing [LangGraph.js](https://github.com/langchain-ai/langgraphjs) projects in [LangGraph Studio](https://github.com/langchain-ai/langgraph-studio).
+This is a sample project that will help you get started with developing [LangGraph.js](https://github.com/langchain-ai/langgraphjs) projects in [LangGraph Studio](https://github.com/langchain-ai/langgraph-studio) and deploying them to [LangGraph Cloud](https://langchain-ai.github.io/langgraph/cloud/deployment/setup_javascript/).
 
-![](/static/studio.png)
+![](/static/studio.gif)
 
-It contains a simple example graph exported from `src/agent.ts` that implements a basic ReAct pattern where the model can use tools for more information before responding to a user query, as well as the required `langgraph.json` for opening the graph in LangGraph Studio.
+It contains a simple example graph exported from `src/agent.ts` that implements a basic ReAct pattern where the model can use tools for more information before responding to a user query. It also includes the required `langgraph.json` config file for opening the graph in LangGraph Studio.
 
 ## Getting Started
 
@@ -17,13 +17,11 @@ This demo requires an [OpenAI API key](https://openai.com/) and a [Tavily API ke
 5. Open the enclosing folder in LangGraph Studio.
 6. Start testing your app!
 
-The graph has access to a web search tool powered by Tavily - you can try asking it about current events like `"What is the current conservation status of the Great Barrier Reef?"` and see it use the tool.
+The graph has access to a web search tool powered by [Tavily](https://tavily.com) - you can try asking it about current events like `"What is the current conservation status of the Great Barrier Reef?"` and watch the model use the tool.
 
-Note that the `Deploy` button is currently not supported, but will be soon!
+You will also need the latest versions of `@langchain/langgraph` and `@langchain/core`. If you have an existing project that you want to open in Studio, see [these instructions](https://langchain-ai.github.io/langgraphjs/how-tos/manage-ecosystem-dependencies/) for help upgrading.
 
-You will also need the latest versions of `@langchain/langgraph` and `@langchain/core`. See these instructions for help upgrading an [existing project](https://langchain-ai.github.io/langgraphjs/how-tos/manage-ecosystem-dependencies/).
-
-You can also [click here](https://www.loom.com/share/81cafa32d57f4933bd5d9b08c70f460c?sid=4ebcb366-f27a-4c49-854d-169106b4f6fe) to see a (rough) video tour of Studio.
+You can also [click here](https://youtu.be/RB3OHqM7TFA) to see a video tour of LangGraph.js and Studio.
 
 ## Development
 
@@ -33,7 +31,7 @@ While iterating on your graph, you can edit past state and rerun your app from p
 
 Follow up requests will be appended to the same thread. You can create an entirely new thread, clearing previous history, using the `+` button in the top right.
 
-You can find the latest (under construction) docs on [LangGraph.js](https://langchain-ai.github.io/langgraphjs/) here, including examples and other references.
+You can find the latest docs on [LangGraph.js](https://langchain-ai.github.io/langgraphjs/) here, including examples and other references.
 
 ### Defining state
 
@@ -54,6 +52,11 @@ The graph's state will merge lists of messages or returned single messages, upda
 By default, this ensures the state is "append-only", unless the new message has the same ID as an existing message.
 
 For further reading, see [this page](https://langchain-ai.github.io/langgraphjs/how-tos/define-state/#getting-started).
+
+## Deployment
+
+Once you've refined your graph locally, you can easily deploy it from a Git repo to LangGraph Cloud, our scalable deployment service for agents.
+See the [documentation here](https://langchain-ai.github.io/langgraph/cloud/deployment/setup_javascript/) for information on how to sign up.
 
 ## Notes
 
@@ -81,3 +84,8 @@ We are working to lift this requirement in the future.
 LangGraph Studio also integrates with [LangSmith](https://smith.langchain.com/) for more in-depth tracing and collaboration with teammates.
 
 You can swap in other models if you'd like by using [the appropriate LangChain.js integration package](https://js.langchain.com/v0.2/docs/integrations/chat/) or the appropriate SDK directly.
+
+## Thank you!
+
+LangGraph.js support in Studio is currently in beta, so if you have questions or feedback, please let us know. Connect with us on X [@LangChainAI](https://x.com/langchainai).
+
