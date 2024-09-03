@@ -4,7 +4,11 @@
   "dependencies": {
     "@langchain/community": "^0.2.31",
     "@langchain/core": "^0.2.31",
-    "@langchain/langgraph": "0.2.0",
+    "@langchain/langgraph": "^0.2.1",
     "@langchain/openai": "^0.2.8"
+  },
+  "devDependencies": {
+    "@tsconfig/recommended": "^1.0.7",
+    "typescript": "^5.5.4"
   }
 }
