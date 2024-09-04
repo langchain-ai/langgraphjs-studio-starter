@@ -36,19 +36,19 @@
     zod "^3.22.4"
     zod-to-json-schema "^3.22.3"
 
-"@langchain/langgraph-checkpoint@~0.0.4":
-  version "0.0.4"
-  resolved "https://registry.npmjs.org/@langchain/langgraph-checkpoint/-/langgraph-checkpoint-0.0.4.tgz"
-  integrity sha512-oihZW6l2gr+BZ+BAkz3CrB3Pmyz/PGboDqvbR43jzNk/SvWWcsY0brm89K4oS1DDmxP/2aos/+E+Ynk5Z2XL6Q==
+"@langchain/langgraph-checkpoint@~0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@langchain/langgraph-checkpoint/-/langgraph-checkpoint-0.0.5.tgz#04b6941c97ae6071090f0a7824e84f6edc3dfbcd"
+  integrity sha512-Twa4e93BlGqpuwgdvhviNgcjefEKnY1L4roA8BrN/2eNQAAAbB0ETS9ix8k+5uahAC2DXWTBO2bXeYYYHQpWuw==
   dependencies:
     uuid "^10.0.0"
 
-"@langchain/langgraph@*", "@langchain/langgraph@^0.2.0-rc.0":
-  version "0.2.0-rc.0"
-  resolved "https://registry.npmjs.org/@langchain/langgraph/-/langgraph-0.2.0-rc.0.tgz"
-  integrity sha512-KmpWbkljzv+VZOSwr5V2DYe/v4sMI40hV1HCYGlPGj65Xw6Vwh+3xMaZ9I8SQxzXLXBbuGOahRZHmQNMWVuAyg==
+"@langchain/langgraph@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@langchain/langgraph/-/langgraph-0.2.2.tgz#2bb970e1b9a1458a6e70f920a13f6d129130c6eb"
+  integrity sha512-DTw3LMUqBH2nDMrVXWSDusKUEWpdXV7pLlbC0O+LO6225NuSqFHW5mniII8L86IVTPi7pX9ZSF/MXsPA07vq5w==
   dependencies:
-    "@langchain/langgraph-checkpoint" "~0.0.4"
+    "@langchain/langgraph-checkpoint" "~0.0.5"
     double-ended-queue "^2.1.0-0"
     uuid "^10.0.0"
     zod "^3.23.8"
@@ -79,6 +79,12 @@
   dependencies:
     axios "^1.6.8"
     dotenv "^16.4.5"
+
+"@tsconfig/recommended@^1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@tsconfig/recommended/-/recommended-1.0.7.tgz#fdd95fc2c8d643c8b4a8ca45fd68eea248512407"
+  integrity sha512-xiNMgCuoy4mCL4JTywk9XFs5xpRUcKxtWEcMR6FNMtsgewYTIgIR+nvlP4A4iRCAzRsHMnPhvTRrzp4AGcRTEA==
+
 
 "@types/node-fetch@^2.6.4":
   version "2.6.11"
@@ -526,6 +532,11 @@ tr46@~0.0.3:
   version "0.0.3"
   resolved "https://registry.npmjs.org/tr46/-/tr46-0.0.3.tgz"
   integrity sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==
+
+typescript@^5.5.4:
+  version "5.5.4"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.5.4.tgz#d9852d6c82bad2d2eda4fd74a5762a8f5909e9ba"
+  integrity sha512-Mtq29sKDAEYP7aljRgtPOpTvOfbwRWlS6dPRzwjdE+C0R4brX/GUyhHSecbHMFLNBLcJIPt9nl9yG5TZ1weH+Q==
 
 undici-types@~5.26.4:
   version "5.26.5"
