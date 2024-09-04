@@ -5,6 +5,9 @@
     "@langchain/community": "^0.2.31",
     "@langchain/core": "^0.2.31",
     "@langchain/langgraph": "^0.2.0-rc.0",
-    "@langchain/openai": "^0.2.8"
+    "@langchain/openai": "^0.2.8",
+    "@mendable/firecrawl-js": "^0.0.13",
+    "rss-url-parser": "^3.0.0",
+    "tiktoken": "^1.0.16"
   }
 }

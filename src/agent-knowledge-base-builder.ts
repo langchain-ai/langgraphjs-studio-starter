@@ -5,17 +5,11 @@ import { ChatOpenAI } from "@langchain/openai";
 import { MessagesAnnotation, StateGraph } from "@langchain/langgraph";
 import { ToolNode } from "@langchain/langgraph/prebuilt";
 
-// Reflect n times
 const reflectTimes = 3;
 
 const tools = [new TavilySearchResults({ maxResults: 3 })];
 
-// Define the function that calls the model
 async function callGenerateModel(state: typeof MessagesAnnotation.State) {
-  /**
-   * Call the LLM powering our agent.
-   * Feel free to customize the prompt, model, and other logic!
-   */
   const model = new ChatOpenAI({
     model: "gpt-4o-mini",
   }).bindTools(tools);
@@ -23,15 +17,6 @@ async function callGenerateModel(state: typeof MessagesAnnotation.State) {
   const response = await model.invoke([
     {
       role: "system",
-      // content: `You are a helpful assistant. The current date is ${new Date().getTime()}.`,
-      //       content: `
-      // You are a skilled writer tasked with creating an informative piece of content.
-      // The target audience for this content is diverse, including both experts and
-      // general readers. The tone should be appropriate to the purpose of the text,
-      // which may vary between formal, informal, technical, or narrative. The primary
-      // goal is to communicate the message clearly and engagingly. Be sure to include
-      // any relevant details, such as data, examples, or arguments, as needed. The text
-      // should be of a length that meets the project's requirements.`,
       content: `
 You are an essay assistant tasked with writing excellent 5-paragraph essays.
 Generate the best essay possible for the user's request.
