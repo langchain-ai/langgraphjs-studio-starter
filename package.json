@@ -2,10 +2,13 @@
   "name": "langgraphjs-studio-starter",
   "packageManager": "yarn@1.22.22",
   "dependencies": {
-    "@langchain/community": "^0.2.31",
-    "@langchain/core": "^0.2.31",
-    "@langchain/langgraph": "^0.2.2",
-    "@langchain/openai": "^0.2.8"
+    "@langchain/community": "^0.3.0",
+    "@langchain/core": "^0.3.0",
+    "@langchain/langgraph": "^0.2.3",
+    "@langchain/openai": "^0.3.0",
+    "langsmith": "^0.1.55",
+    "zod": "^3.23.8",
+    "zod-to-json-schema": "^3.23.2"
   },
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.7",

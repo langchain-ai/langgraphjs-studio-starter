@@ -83,7 +83,7 @@ We are working to lift this requirement in the future.
 
 LangGraph Studio also integrates with [LangSmith](https://smith.langchain.com/) for more in-depth tracing and collaboration with teammates.
 
-You can swap in other models if you'd like by using [the appropriate LangChain.js integration package](https://js.langchain.com/v0.2/docs/integrations/chat/) or the appropriate SDK directly.
+You can swap in other models if you'd like by using [the appropriate LangChain.js integration package](https://js.langchain.com/docs/integrations/chat/) or the appropriate SDK directly.
 
 ## Thank you!
 
