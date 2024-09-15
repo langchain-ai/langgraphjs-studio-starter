@@ -18,16 +18,16 @@
     zod "^3.22.3"
     zod-to-json-schema "^3.22.5"
 
-"@langchain/core@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@langchain/core/-/core-0.3.0.tgz#52bcf9d0bc480d2b2a456ee4aa8aed1cce6f6aba"
-  integrity sha512-uYuozr9cHpm+Aat6RdheGWAiJ2GEmb/N33FCbHlN/+vKTwRmaju2F5pZi2CioK9kQwrQZVNydCbgaZm1c6ry6w==
+"@langchain/core@^0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@langchain/core/-/core-0.3.1.tgz#f06206809575b2a95eaef609b3273842223c0786"
+  integrity sha512-xYdTAgS9hYPt+h0/OwpyRcMB5HKR40LXutbSr2jw3hMVIOwD1DnvhnUEnWgBK4lumulVW2jrosNPyBKMhRZAZg==
   dependencies:
     ansi-styles "^5.0.0"
     camelcase "6"
     decamelize "1.2.0"
     js-tiktoken "^1.0.12"
-    langsmith "^0.1.43"
+    langsmith "^0.1.56-rc.1"
     mustache "^4.2.0"
     p-queue "^6.6.2"
     p-retry "4"
@@ -347,10 +347,10 @@ jsonpointer@^5.0.1:
     zod "^3.22.4"
     zod-to-json-schema "^3.22.3"
 
-langsmith@^0.1.43:
-  version "0.1.47"
-  resolved "https://registry.yarnpkg.com/langsmith/-/langsmith-0.1.47.tgz#9c29acac104c63cf638302025d33eca942f7558d"
-  integrity sha512-A54kamjY1zn4CRTxxVxhfnn/rjO7VNZS13XuzyXgw7defV8sgclofex+hzMjSb2nhssraSAXGA0KEzEo3+WyWw==
+langsmith@^0.1.55:
+  version "0.1.55"
+  resolved "https://registry.yarnpkg.com/langsmith/-/langsmith-0.1.55.tgz#bdbb8015a28093f4a248c0ee9b8937731c5baa93"
+  integrity sha512-6NVtI04UUnIY59I/imOX02FG/QMGfqStu8tiJtyyreKMv2GAN0EE9Z5Ap1wzOe6v8ukEcV3NwEO2LYOPwup1PQ==
   dependencies:
     "@types/uuid" "^10.0.0"
     commander "^10.0.1"
@@ -359,10 +359,10 @@ langsmith@^0.1.43:
     semver "^7.6.3"
     uuid "^10.0.0"
 
-langsmith@^0.1.55:
-  version "0.1.55"
-  resolved "https://registry.yarnpkg.com/langsmith/-/langsmith-0.1.55.tgz#bdbb8015a28093f4a248c0ee9b8937731c5baa93"
-  integrity sha512-6NVtI04UUnIY59I/imOX02FG/QMGfqStu8tiJtyyreKMv2GAN0EE9Z5Ap1wzOe6v8ukEcV3NwEO2LYOPwup1PQ==
+langsmith@^0.1.56-rc.1:
+  version "0.1.56-rc.1"
+  resolved "https://registry.yarnpkg.com/langsmith/-/langsmith-0.1.56-rc.1.tgz#20900ff0dee51baea359c6f16a4acc260f07fbb7"
+  integrity sha512-XsOxlhBAlTCGR9hNEL2VSREmiz8v6czNuX3CIwec9fH9T0WbNPle8Q/7Jy/h9UCbS9vuzTjfgc4qO5Dc9cu5Ig==
   dependencies:
     "@types/uuid" "^10.0.0"
     commander "^10.0.1"

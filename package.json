@@ -3,7 +3,7 @@
   "packageManager": "yarn@1.22.22",
   "dependencies": {
     "@langchain/community": "^0.3.0",
-    "@langchain/core": "^0.3.0",
+    "@langchain/core": "^0.3.1",
     "@langchain/langgraph": "^0.2.3",
     "@langchain/openai": "^0.3.0",
     "langsmith": "^0.1.55",
