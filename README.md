@@ -14,8 +14,9 @@ This demo requires an [OpenAI API key](https://openai.com/) and a [Tavily API ke
 2. Rename the existing `.env.example` file `.env` and fill in your `OPENAI_API_KEY` and `TAVILY_API_KEY`.
 3. Download the latest release of LangGraph Studio [from here](https://github.com/langchain-ai/langgraph-studio/releases).
 4. Log in/sign up for [LangSmith](https://smith.langchain.com/) if you haven't already.
-5. Open the enclosing folder in LangGraph Studio.
-6. Start testing your app!
+5. Ensure Docker is running. You can [download Docker here](https://www.docker.com/) and install it if you don't have it already.
+6. Open the enclosing folder in LangGraph Studio.
+7. Start testing your app!
 
 The graph has access to a web search tool powered by [Tavily](https://tavily.com) - you can try asking it about current events like `"What is the current conservation status of the Great Barrier Reef?"` and watch the model use the tool.
 
